@@ -35,11 +35,10 @@ cacheSolve <- function(x, ...) {
             return(inv)
       }
       data <- x$get()
-      len <- length(data)
-      sqlen <- sqrt(len)
-      mat <- matrix(data, nrow= sqlen, ncol= sqlen)
-      inv <- solve(mat)
+      
+      inv <- solve(data, ...)
       x$setinv(inv)
+      
       inv
 }
 
